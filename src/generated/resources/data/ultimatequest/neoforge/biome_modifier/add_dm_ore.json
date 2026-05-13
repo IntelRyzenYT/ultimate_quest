@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#ultimatequest:is_void_biome",
+  "features": "ultimatequest:dark_matter_ore_key",
+  "step": "underground_ores"
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "ultimatequest:block/processor_off"
+    },
+    "powered=true": {
+      "model": "ultimatequest:block/processor_on"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultimatequest:block/processor_bottom",
+    "side": "ultimatequest:block/processor_side_unpowered",
+    "top": "ultimatequest:block/processor_top"
+  }
+}

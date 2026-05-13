@@ -1,0 +1,10 @@
+{
+  "type": "ultimatequest:processor",
+  "ingredient": {
+    "item": "minecraft:stick"
+  },
+  "result": {
+    "id": "minecraft:diamond",
+    "count": 64
+  }
+}

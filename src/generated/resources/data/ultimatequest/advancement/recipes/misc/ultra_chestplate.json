@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ultimatequest:ultra_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_dust": {
+      "conditions": {
+        "items": [
+          {
+            "items": "ultimatequest:ultra_dust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ultra_dust"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ultimatequest:ultra_chestplate"
+    ]
+  }
+}
