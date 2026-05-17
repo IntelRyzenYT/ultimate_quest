@@ -8,6 +8,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.sql.Ref;
+
 public class UQRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
             DeferredRegister.create(Registries.RECIPE_SERIALIZER, UltimateQuestMod.MODID);
@@ -24,6 +26,17 @@ public class UQRecipes {
                 @Override
                 public String toString() {
                     return "processor";
+                }
+            });
+
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<RefinerRecipe>> REFINER_SERIALIZER =
+            SERIALIZERS.register("refiner", RefinerRecipe.Serializer::new);
+
+    public static final DeferredHolder<RecipeType<?>, RecipeType<RefinerRecipe>> REFINER_TYPE =
+            TYPES.register("refiner", () -> new RecipeType<RefinerRecipe>() {
+                @Override
+                public String toString() {
+                    return "refiner";
                 }
             });
 

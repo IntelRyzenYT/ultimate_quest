@@ -19,6 +19,9 @@ public class UQBlockEntities {
     public static final Supplier<BlockEntityType<ProcessorBlockEntity>> PROCESSOR_BE = BLOCK_ENTITIES
             .register("processor", () -> BlockEntityType.Builder.of(ProcessorBlockEntity::new, UQBlocks.PROCESSOR.get()).build(null));
 
+    public static final Supplier<BlockEntityType<RefinerBlockEntity>> REFINER_BE = BLOCK_ENTITIES
+            .register("refiner", () -> BlockEntityType.Builder.of(RefinerBlockEntity::new, UQBlocks.REFINER.get()).build(null));
+
     public static void register(IEventBus bus) {
         BLOCK_ENTITIES.register(bus);
     }

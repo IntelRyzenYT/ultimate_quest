@@ -1,11 +1,10 @@
 package net.intelryzen.ultimatequest.item;
 
 import net.intelryzen.ultimatequest.UltimateQuestMod;
+import net.intelryzen.ultimatequest.fluid.UQFluids;
 import net.intelryzen.ultimatequest.item.custom.BedrockBreakerItem;
 import net.intelryzen.ultimatequest.item.custom.PigDestoyerItem;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -33,6 +32,14 @@ public class UQItems {
     public static DeferredItem<Item> OBSIDIAN_PROCESSED_ULTRA_DUST = ITEMS.register("obsidian_processed_ultra_dust", () -> new Item(new Item.Properties()));
 
     public static DeferredItem<Item> DARK_MATTER = ITEMS.register("dark_matter", () -> new Item(new Item.Properties()));
+
+    public static DeferredItem<Item> CATALYST_BUCKET =
+            ITEMS.register("catalyst_bucket", () -> new BucketItem(UQFluids.CATALYST_SOURCE.get(), new Item.Properties()
+                    .stacksTo(1)
+                    .craftRemainder(Items.BUCKET)
+
+            ));
+
 
     public static DeferredItem<ArmorItem> ULTRA_HELMET = ITEMS.register("ultra_helmet", () -> new ArmorItem(ModArmorMaterials.ULTRA_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
             new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(19))));

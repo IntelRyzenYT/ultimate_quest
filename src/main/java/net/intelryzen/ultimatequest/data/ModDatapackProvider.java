@@ -15,7 +15,6 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-import java.security.Provider;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 

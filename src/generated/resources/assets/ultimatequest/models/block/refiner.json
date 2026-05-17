@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultimatequest:block/refiner_bottom",
+    "side": "ultimatequest:block/refiner_side",
+    "top": "ultimatequest:block/refiner_top"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "ultimatequest:refiner",
+  "ingredient": {
+    "item": "ultimatequest:processed_ultra_dust"
+  },
+  "fluid": {
+    "id": "ultimatequest:catalyst_source",
+    "amount": 250
+  },
+  "result": {
+    "id": "ultimatequest:ultra_ingot",
+    "count": 1
+  }
+}

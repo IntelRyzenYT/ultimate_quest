@@ -44,6 +44,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(UQItems.OBSIDIAN_PROCESSED_ULTRA_DUST.get());
         basicItem(UQItems.DARK_MATTER.get());
 
+        basicItem(UQItems.CATALYST_BUCKET.get());
+
         trimmedArmorItem(UQItems.ULTRA_HELMET);
         trimmedArmorItem(UQItems.ULTRA_CHESTPLATE);
         trimmedArmorItem(UQItems.ULTRA_LEGGINGS);

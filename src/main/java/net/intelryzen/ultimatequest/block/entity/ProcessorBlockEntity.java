@@ -1,5 +1,6 @@
 package net.intelryzen.ultimatequest.block.entity;
 
+import net.intelryzen.ultimatequest.UltimateQuestMod;
 import net.intelryzen.ultimatequest.item.UQItems;
 import net.intelryzen.ultimatequest.recipe.ProcessorRecipe;
 import net.intelryzen.ultimatequest.recipe.ProcessorRecipeInput;

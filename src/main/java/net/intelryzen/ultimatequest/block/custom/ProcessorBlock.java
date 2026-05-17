@@ -1,12 +1,10 @@
 package net.intelryzen.ultimatequest.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.EitherMapCodec;
 import net.intelryzen.ultimatequest.block.entity.ProcessorBlockEntity;
 import net.intelryzen.ultimatequest.block.entity.UQBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
@@ -75,7 +73,7 @@ public class ProcessorBlock extends BaseEntityBlock {
             if (blockEntity instanceof ProcessorBlockEntity entity) {
                 ((ServerPlayer) player).openMenu(new SimpleMenuProvider(entity, Component.literal("Processor")), pos);
             } else {
-                throw new IllegalStateException("Lol");
+                throw new IllegalStateException("very informative error: in useItemOn of ProcessorBlock, block entity was not an instance of ProcessorBlockEntity");
             }
         }
 

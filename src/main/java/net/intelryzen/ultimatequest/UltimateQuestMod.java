@@ -2,12 +2,13 @@ package net.intelryzen.ultimatequest;
 
 import net.intelryzen.ultimatequest.block.UQBlocks;
 import net.intelryzen.ultimatequest.block.entity.UQBlockEntities;
+import net.intelryzen.ultimatequest.fluid.UQFluids;
 import net.intelryzen.ultimatequest.item.UQCreativeModeTabs;
 import net.intelryzen.ultimatequest.item.UQItems;
 import net.intelryzen.ultimatequest.recipe.UQRecipes;
 import net.intelryzen.ultimatequest.screen.UQMenuTypes;
-import net.intelryzen.ultimatequest.screen.custom.ProcessorBlockMenu;
 import net.intelryzen.ultimatequest.screen.custom.ProcessorBlockScreen;
+import net.intelryzen.ultimatequest.screen.custom.RefinerScreen;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -19,7 +20,6 @@ import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -58,7 +58,8 @@ public class UltimateQuestMod {
 
         UQRecipes.register(modEventBus);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        UQFluids.register(modEventBus);
+
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -83,6 +84,8 @@ public class UltimateQuestMod {
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
             event.register(UQMenuTypes.PROCESSOR_MENU.get(), ProcessorBlockScreen::new);
+
+            event.register(UQMenuTypes.REFINER_MENU.get(), RefinerScreen::new);
         }
     }
 }

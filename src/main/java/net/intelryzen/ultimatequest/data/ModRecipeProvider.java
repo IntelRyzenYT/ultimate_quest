@@ -37,20 +37,36 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_processed_ultra_dust", has(UQItems.PROCESSED_ULTRA_DUST))
                 .save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, UQItems.PROCESSED_ULTRA_DUST)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, UQItems.ULTRA_HELMET)
                 .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', UQItems.ULTRA_DUST)
-                .unlockedBy("has_ultra_dust", has(UQItems.ULTRA_DUST))
+                .pattern("A A")
+                .pattern("   ")
+                .define('A', UQItems.ULTRA_INGOT)
+                .unlockedBy("has_ultra_ingot", has(UQItems.ULTRA_INGOT))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, UQItems.ULTRA_CHESTPLATE)
+                .pattern("A A")
                 .pattern("AAA")
                 .pattern("AAA")
+                .define('A', UQItems.ULTRA_INGOT)
+                .unlockedBy("has_ultra_ingot", has(UQItems.ULTRA_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, UQItems.ULTRA_LEGGINGS)
                 .pattern("AAA")
-                .define('A', UQItems.ULTRA_DUST)
-                .unlockedBy("has_ultra_dust", has(UQItems.ULTRA_DUST))
+                .pattern("A A")
+                .pattern("A A")
+                .define('A', UQItems.ULTRA_INGOT)
+                .unlockedBy("has_ultra_ingot", has(UQItems.ULTRA_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, UQItems.ULTRA_BOOTS)
+                .pattern("   ")
+                .pattern("A A")
+                .pattern("A A")
+                .define('A', UQItems.ULTRA_INGOT)
+                .unlockedBy("has_ultra_ingot", has(UQItems.ULTRA_INGOT))
                 .save(recipeOutput);
     }
 }

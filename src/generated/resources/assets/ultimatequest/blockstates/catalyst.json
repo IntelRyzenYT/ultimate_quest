@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "level=0": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=1": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=10": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=11": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=12": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=13": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=14": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=15": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=2": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=3": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=4": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=5": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=6": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=7": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=8": {
+      "model": "ultimatequest:block/catalyst"
+    },
+    "level=9": {
+      "model": "ultimatequest:block/catalyst"
+    }
+  }
+}

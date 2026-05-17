@@ -40,6 +40,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(UQBlocks.DARK_MATTER_ORE.get(), this::createDarkMatterDrop);
 
         dropSelf(UQBlocks.PROCESSOR.get());
+        dropSelf(UQBlocks.REFINER.get());
     }
 
 

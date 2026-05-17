@@ -62,7 +62,7 @@ public record ProcessorRecipe(Ingredient inputItem, ItemStack output) implements
     public static class Serializer implements RecipeSerializer<ProcessorRecipe> {
         public static final MapCodec<ProcessorRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
                 Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(ProcessorRecipe::inputItem),
-                ItemStack.STRICT_CODEC.fieldOf("result").forGetter(ProcessorRecipe::output)
+                ItemStack.CODEC.fieldOf("result").forGetter(ProcessorRecipe::output)
         ).apply(inst, ProcessorRecipe::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, ProcessorRecipe> STREAM_CODEC = StreamCodec.composite(

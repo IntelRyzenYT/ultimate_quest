@@ -2,7 +2,7 @@ package net.intelryzen.ultimatequest.screen.custom;
 
 import net.intelryzen.ultimatequest.UltimateQuestMod;
 import net.intelryzen.ultimatequest.block.UQBlocks;
-import net.intelryzen.ultimatequest.block.entity.ProcessorBlockEntity;
+import net.intelryzen.ultimatequest.block.entity.RefinerBlockEntity;
 import net.intelryzen.ultimatequest.screen.UQMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -11,35 +11,40 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.items.SlotItemHandler;
-import org.jetbrains.annotations.NotNull;
 
-public class ProcessorBlockMenu extends AbstractContainerMenu {
-    public final ProcessorBlockEntity entity;
+public class RefinerMenu extends AbstractContainerMenu {
+    public final RefinerBlockEntity entity;
     private final Level level;
     private final ContainerData data;
 
-
-
-    public ProcessorBlockMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
+    public RefinerMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
         this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public ProcessorBlockMenu(int containerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(UQMenuTypes.PROCESSOR_MENU.get(), containerId);
-        this.entity = ((ProcessorBlockEntity) entity);
+    public RefinerMenu(int containerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(UQMenuTypes.REFINER_MENU.get(), containerId);
+        this.entity = ((RefinerBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
 
         addPlayerHotbar(inv);
         addPlayerInventory(inv);
 
-        this.addSlot(new SlotItemHandler(((ProcessorBlockEntity) entity).itemHandler, 0, 44,35));
-        this.addSlot(new SlotItemHandler(((ProcessorBlockEntity) entity).itemHandler, 1, 116,35));
-
+        this.addSlot(new SlotItemHandler(this.entity.itemHandler, 0, 53, 50));
+        this.addSlot(new SlotItemHandler(this.entity.itemHandler, 1, 107, 50));
+        this.addSlot(new SlotItemHandler(this.entity.itemHandler, 2, 147, 8));
         addDataSlots(data);
     }
 
+    public FluidStack getFluid() {
+        return this.entity.getFluidStack();
+    }
+
+    public int getFluidCapacity() {
+        return this.entity.fluidTank.getCapacity();
+    }
 
     public boolean isCrafting() {
         return data.get(0) > 0;
@@ -61,8 +66,9 @@ public class ProcessorBlockMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
+    // 🌟 UPDATED: Changed from 2 to 3 since you added the bucket handler slot
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;
 
-    private static final int TE_INVENTORY_SLOT_COUNT = 2;
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -71,13 +77,11 @@ public class ProcessorBlockMenu extends AbstractContainerMenu {
         ItemStack copyOfSourceStack = sourceStack.copy();
 
         if (pIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-
             if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
                     + TE_INVENTORY_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
         } else if (pIndex < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
-
             if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
@@ -97,7 +101,7 @@ public class ProcessorBlockMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, entity.getBlockPos()),
-                player, UQBlocks.PROCESSOR.get());
+                player, UQBlocks.REFINER.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

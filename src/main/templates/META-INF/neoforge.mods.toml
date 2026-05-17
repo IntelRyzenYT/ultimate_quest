@@ -46,7 +46,15 @@ authors="IntelRyzen"
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Learning NeoForge!.
+Welcome to the Ultimate Quest mod! Currently in early beta, this mod introduces a new progression line involving rare materials, custom machinery, and an entirely new dimension to explore.
+
+Key Features:
+- Ultra Dust: A rare material found in the lower Y-levels of the End. Process and refine it to forge powerful Ultra Ingots and Ultra Armor.
+- The Void Dimension: A barren bedrock wasteland accessible only by falling into the void while wearing a full set of Ultra Armor. 
+- Bedrock Breaker: A specialized tool crafted from Obsidian-Processed Ultra Dust that allows you to break bedrock by right-clicking.
+- Custom Machinery: Features the Processor and Refiner blocks used to refine your materials (currently creative-only while recipes are finalized).
+
+Note: This mod is in an early beta stage for NeoForge 1.21.1. Some features are actively in development, and survival crafting recipes for machines will be added in a future update. Please report any bugs or suggestions to our GitHub repository!
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
