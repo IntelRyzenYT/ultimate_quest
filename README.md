@@ -8,8 +8,8 @@ Welcome to the beta version of the Ultimate Quest mod! This mod adds a few signi
 ## Requirements
 
 - Minecraft Version: 1.21.1.
-- Recommended: [NeoForge](https://neoforged.net/) 21.1.228 for Minecraft 1.21.1.
-- Other NeoForge 1.21.1 versions may work, but 21.1.228 is the version this beta was built and tested against. Please report compatibility issues.
+- [NeoForge](https://neoforged.net/) 21.1.219+
+- Any version of NeoForge 1.21.1 that is 21.1.219 or above is compatible.
 
 ### Installation:
 
