@@ -24,7 +24,7 @@ Welcome to the beta version of the Ultimate Quest mod! This mod adds a few signi
 **Ultra Dust** is a rare material found in the End dimension, typically generating near the lower Y-levels. 
 1. Mine **Ultra Dust**.
 2. Run it through a Processor (cannot be crafted in survival) to get **Processed Ultra Dust**.
-3. Refine it with a Catalyst to forge **Ultra Ingots**.
+3. Use a Refiner with a Catalyst to forge **Ultra Ingots**.
 
 You can craft the ingots into **Ultra Armor**, which with a full set allows you to enter the **Void Dimension**.
 
